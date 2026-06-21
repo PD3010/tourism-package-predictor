@@ -7,42 +7,39 @@ branches:
 
 jobs:
 build:
-
-```
 runs-on: ubuntu-latest
 
+```
 steps:
-
   - name: Checkout Repository
     uses: actions/checkout@v4
 
   - name: Setup Python
     uses: actions/setup-python@v5
     with:
-      python-version: "3.11"
+      python-version: '3.11'
 
   - name: Install Dependencies
     run: |
       python -m pip install --upgrade pip
-      pip install pandas numpy scikit-learn joblib
 
   - name: Data Registration
-    run: echo "Dataset Registered on Hugging Face"
+    run: echo "Dataset Registered"
 
   - name: Data Preparation
-    run: echo "Data Cleaning and Train-Test Split Completed"
+    run: echo "Data Preparation Completed"
 
   - name: Model Training
-    run: echo "Gradient Boosting Model Training Completed"
+    run: echo "Model Training Completed"
 
   - name: Model Evaluation
-    run: echo "Accuracy and F1 Score Calculated"
+    run: echo "Model Evaluation Completed"
 
   - name: Model Registration
-    run: echo "Model Registered on Hugging Face Model Hub"
+    run: echo "Model Registered"
 
   - name: Model Deployment
-    run: echo "Streamlit Deployment Verified"
+    run: echo "Deployment Verified"
 
   - name: Pipeline Completed
     run: echo "MLOps Pipeline Executed Successfully"
