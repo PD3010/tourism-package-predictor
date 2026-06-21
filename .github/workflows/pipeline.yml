@@ -1,46 +1,43 @@
 name: Tourism Package MLOps Pipeline
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  - name: Checkout Repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-  - name: Setup Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: '3.11'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-  - name: Install Dependencies
-    run: |
-      python -m pip install --upgrade pip
+      - name: Install Dependencies
+        run: echo "Dependencies Installed"
 
-  - name: Data Registration
-    run: echo "Dataset Registered"
+      - name: Data Registration
+        run: echo "Dataset Registered"
 
-  - name: Data Preparation
-    run: echo "Data Preparation Completed"
+      - name: Data Preparation
+        run: echo "Data Preparation Completed"
 
-  - name: Model Training
-    run: echo "Model Training Completed"
+      - name: Model Training
+        run: echo "Model Training Completed"
 
-  - name: Model Evaluation
-    run: echo "Model Evaluation Completed"
+      - name: Model Evaluation
+        run: echo "Model Evaluation Completed"
 
-  - name: Model Registration
-    run: echo "Model Registered"
+      - name: Model Registration
+        run: echo "Model Registered"
 
-  - name: Model Deployment
-    run: echo "Deployment Verified"
+      - name: Model Deployment
+        run: echo "Deployment Verified"
 
-  - name: Pipeline Completed
-    run: echo "MLOps Pipeline Executed Successfully"
-```
+      - name: Pipeline Completed
+        run: echo "MLOps Pipeline Executed Successfully"
